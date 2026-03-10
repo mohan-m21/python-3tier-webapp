@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python 3 Tier Web App</title>
+
+<script>
+
+async function getData() {
+
+    const response = await fetch("http://localhost:5000/api");
+
+    const data = await response.json();
+
+    document.getElementById("result").innerHTML =
+        "Message: " + data.message +
+        "<br><br>Database Records: " + JSON.stringify(data.data);
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>Python 3 Tier DevOps Web Application</h1>
+
+<button onclick="getData()">Fetch Data From Backend</button>
+
+<p id="result"></p>
+
+</body>
+</html>
