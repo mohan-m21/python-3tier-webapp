@@ -7,11 +7,6 @@ pipeline {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Mohan_GitHub', url: 'https://github.com/mohan-m21/python-3tier-webapp.git']])
             }
         }
-        stage('Install Dependencies') {
-            steps {
-            sh 'pip3 install -r backend/requirements.txt'
-            }
-        }
         stage('installing pytest') {
             steps {
                 sh 'pip install pytest'
