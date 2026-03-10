@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN yum install -y python3-pip
+
 RUN pip install -r requirements.txt
 
 CMD ["python", "app.py"]
