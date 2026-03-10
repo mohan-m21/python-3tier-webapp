@@ -14,7 +14,11 @@ pipeline {
                 )
             }
         }
-
+        stage('Clean') {
+        steps {
+        deleteDir()
+            }
+        }
         stage('Build Images') {
             steps {
                 sh 'docker-compose build'
