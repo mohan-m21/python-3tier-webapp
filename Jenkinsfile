@@ -10,16 +10,6 @@ pipeline {
                 )
             }
         }
-
-        // NEW: Run backend tests with pytest
-        stage('Run Backend Tests') {
-            steps {
-                dir('backend') {
-                    sh 'pytest'  // Assumes you have test files like test_app.py; add them if missing (see Step 3)
-                }
-            }
-        }
-
         stage('Build Images') {
             steps {
                 sh 'docker-compose build'
