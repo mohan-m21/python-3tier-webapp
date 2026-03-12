@@ -11,14 +11,6 @@ pipeline {
             }
         }
 
-        // NEW: Install backend dependencies (fixes your pip error)
-        stage('Install Backend Dependencies') {
-            steps {
-                    sh 'cd backend'
-                    sh 'pip install -r requirements.txt'
-            }
-        }
-
         // NEW: Run backend tests with pytest
         stage('Run Backend Tests') {
             steps {
