@@ -11,18 +11,11 @@ pipeline {
             }
         }
 
-        stage('Clean') {
-            steps {
-                deleteDir()
-            }
-        }
-
         // NEW: Install backend dependencies (fixes your pip error)
         stage('Install Backend Dependencies') {
             steps {
-                dir('backend') {
+                    sh 'cd backend'
                     sh 'pip install -r requirements.txt'
-                }
             }
         }
 
